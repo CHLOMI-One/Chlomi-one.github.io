@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cook & Care - Sign Up</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 2em; }
+    .container { background: white; max-width: 500px; margin: auto; padding: 2em; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; color: #333; }
+    select, input, button {
+      width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px;
+      border: 1px solid #ccc; font-size: 1rem;
+    }
+    button {
+      background-color: #4CAF50; color: white; border: none; cursor: pointer;
+    }
+    button:hover { background-color: #45a049; }
+    .language-select {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="language-select">
+      <label for="lang">Language:</label>
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+      </select>
+    </div>
+    <h1>Cook & Care</h1>
+    <p style="text-align:center;">Helping people through food donations and community care.</p>
+    <form onsubmit="alert('Form submitted (simulation).'); return false;">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="text" placeholder="Street" />
+      <input type="text" placeholder="Postal Code" />
+      <input type="text" placeholder="City" />
+      <select required>
+        <option value="">I want to...</option>
+        <option value="donate">Offer donation</option>
+        <option value="cook">Cook meals</option>
+      </select>
+      <label><input type="checkbox" /> Receive notifications about local needs</label>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
