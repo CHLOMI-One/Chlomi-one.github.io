@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cook & Care - Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em;
+      background: #4CAF50;
+      color: white;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 0 0.5em;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .lang-select select {
+      padding: 6px;
+      margin-left: 1em;
+    }
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+    p {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 2em;
+    }
+    input, select, button, label {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0;
+      font-size: 1rem;
+    }
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Offer Donation</a>
+      <a href="#">Cook Meals</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="lang-select">
+      <label for="lang" style="color:white;">Language:</label>
+      <select id="lang" onchange="switchLang()">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 id="title">Cook & Care</h1>
+    <p id="desc">Helping people through food donations and community care.</p>
+    <form onsubmit="alert('Form submitted (simulation).'); return false;">
+      <label for="name"></label>
+      <input type="text" id="name" placeholder="Full Name" required />
+
+      <label for="email"></label>
+      <input type="email" id="email" placeholder="Email Address" required />
+
+      <label for="street"></label>
+      <input type="text" id="street" placeholder="Street" />
+
+      <label for="postal"></label>
+      <input type="text" id="postal" placeholder="Postal Code" />
+
+      <label for="city"></label>
+      <input type="text" id="city" placeholder="City" />
+
+      <label for="role"></label>
+      <select id="role" required>
+        <option value="">I want to...</option>
+        <option value="donate">Offer donation</option>
+        <option value="cook">Cook meals</option>
+      </select>
+
+      <label class="checkbox-label">
+        <input type="checkbox" id="notify" />
+        <span id="notifyText">Receive notifications about local needs</span>
+      </label>
+
+      <button type="submit" id="submit">Sign Up</button>
+    </form>
+  </div>
+
+  <script>
+    function switchLang() {
+      const lang = document.getElementById('lang').value;
+      const isHebrew = lang === 'he';
+      document.documentElement.dir = isHebrew ? 'rtl' : 'ltr';
+
+      document.getElementById('title').textContent = isHebrew ? 'בשל ותרום' : 'Cook & Care';
+      document.getElementById('desc').textContent = isHebrew
+        ? 'עזרה לאנשים באמצעות תרומת אוכל ועשייה קהילתית.'
+        : 'Helping people through food donations and community care.';
+      document.getElementById('name').placeholder = isHebrew ? 'שם מלא' : 'Full Name';
+      document.getElementById('email').placeholder = isHebrew ? 'כתובת דוא"ל' : 'Email Address';
+      document.getElementById('street').placeholder = isHebrew ? 'רחוב' : 'Street';
+      document.getElementById('postal').placeholder = isHebrew ? 'מיקוד' : 'Postal Code';
+      document.getElementById('city').placeholder = isHebrew ? 'עיר' : 'City';
+      document.getElementById('role').options[0].text = isHebrew ? 'אני רוצה...' : 'I want to...';
+      document.getElementById('role').options[1].text = isHebrew ? 'לתרום אוכל' : 'Offer donation';
+      document.getElementById('role').options[2].text = isHebrew ? 'לבשל ארוחות' : 'Cook meals';
+      document.getElementById('submit').textContent = isHebrew ? 'הרשמה' : 'Sign Up';
+      document.getElementById('notifyText').textContent = isHebrew ? 'לקבל עדכונים על צרכים מקומיים' : 'Receive notifications about local needs';
+    }
+  </script>
+</body>
+</html>
