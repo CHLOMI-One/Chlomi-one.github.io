@@ -115,7 +115,27 @@
       <button type="submit" id="submit">Sign Up</button>
     </form>
   </div>
+<!-- Stylish Google Form Button -->
+<style>
+  .form-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .form-button:hover {
+    background-color: #45a049;
+  }
+</style>
 
+<button class="form-button"
+  onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeXg0mQqnKnv8FyYKHuUKnjWs2NW9NtSdloe5d8Sek299ISiQ/viewform', '_blank')">
+  Submit a Meal Request
+</button>
   <script>
     function switchLang() {
       const lang = document.getElementById('lang').value;
