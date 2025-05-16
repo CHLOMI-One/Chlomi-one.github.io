@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cook & Care</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+    p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #555;
+    }
+    .form-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .form-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cook & Care</h1>
+  <p>Helping people through food donations and community care.</p>
+
+  <div>
+    <!-- Submit Meal Request Button -->
+    <button class="form-button"
+      onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeXg0mQqnKnv8FyYKHuUKnjWs2NW9NtSdloe5d8Sek299ISiQ/viewform', '_blank')">
+      Submit a Meal Request
+    </button>
+
+    <!-- Donor button redirects to main form page -->
+    <button class="form-button"
+      onclick="window.location.href='signup.html'">
+      I Want to Help
+    </button>
+  </div>
+
+  <p>
+    FoodCare is a platform that connects associations in need of food with generous home cooks and donors.
+    If your organization needs meals, please submit your request using the button above.
+    If you want to help, click the button to register and stay informed about future needs.
+  </p>
+
+</body>
+</html>
